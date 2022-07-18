@@ -17,9 +17,11 @@ public class BasePageObject {
 
     @FindBy(xpath = "//a[text()='Пицца']")
     WebElement buttonPizza;
-    @FindBy(xpath = "//*[@id='pizzas']/article[8]/footer/button")
+    @FindBy(xpath = "//div[3]/span/button")
+    WebElement buttonCookieFiles;
+    @FindBy(xpath = "//article[8]//button[text()='Выбрать']")
     WebElement buttonChoosePizzaFourSeasons;
-    @FindBy(xpath = "/html/body/div[5]/div/div[2]/div/div/div[2]/div[2]")
+    @FindBy(xpath = "/html/body/div[4]/div/div[2]/div/div/div[2]/div[2]/button")
     WebElement buttonAddToBasket;
     @FindBy(xpath = "//button[text()='Корзина']")
     WebElement buttonBasket;
@@ -29,6 +31,9 @@ public class BasePageObject {
 
     public void clickButtonPizza() {
         buttonPizza.click();
+    }
+    public void clickButtonCookieFiles() {
+        buttonCookieFiles.click();
     }
 
     public void clickButtonPizzaFourSeasons() {

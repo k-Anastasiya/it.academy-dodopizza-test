@@ -17,8 +17,7 @@ public class SettingTest {
     }
 
     @After
-    public void close() {
-
+    public void close()  {
         driver.quit();
     }
 }
