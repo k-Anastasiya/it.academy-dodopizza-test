@@ -13,11 +13,11 @@ public class TestPage extends SettingTest {
 
 
     @Test
-    public void isDisplayedPizzaFourSeasons() throws InterruptedException {
+    public void isDisplayedPizzaFourSeasons()  {
         basePageObject.clickButtonCookieFiles();
         basePageObject.clickButtonPizza();
         basePageObject.clickButtonPizzaFourSeasons();
-        Thread.sleep(5000);
+
         basePageObject.clickButtonAddToBasket();
         basePageObject.clickButtonBasket();
         Assert.assertTrue(basePageObject.isDisplayedPizzaFourSeasonIntoBasket());
