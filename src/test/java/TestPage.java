@@ -3,24 +3,18 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class TestPage extends SettingTest {
-    BasePageObject basePageObject;
+public class TestPage extends BaseTest {
+    MinskHomePage minskHomePage;
     WebDriverWait wait;
 
     @Before
     public void preparation() {
-        basePageObject=new BasePageObject(driver);
-        driver.get(basePageObject.WEBSITEURL);
+        minskHomePage =new MinskHomePage(driver);
+        driver.get(minskHomePage.BASE_URL);
     }
-
-
     @Test
     public void isDisplayedPizzaFourSeasons() throws InterruptedException {
-        basePageObject.clickButtonCookieFiles();
-        basePageObject.clickButtonPizza();
-        basePageObject.clickButtonPizzaFourSeasons();
-        basePageObject.clickButtonAddToBasket();
-        basePageObject.clickButtonBasket();
-        Assert.assertTrue(basePageObject.isDisplayedPizzaFourSeasonIntoBasket());
+        minskHomePage.clickButtonCookieFiles().clickButtonPizza().clickButtonPizzaFourSeasons().clickButtonAddToCart().clickButtonCart();
+        Assert.assertEquals("Четыре сезона", minskHomePage.getNameOfPizza());
     }
 }
