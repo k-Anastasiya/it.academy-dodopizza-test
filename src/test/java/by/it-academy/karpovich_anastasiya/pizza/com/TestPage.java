@@ -1,15 +1,17 @@
+package com;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class TestPage extends BaseTest {
-    MinskHomePage minskHomePage;
+public class TestPage extends com.BaseTest {
+    com.MinskHomePage minskHomePage;
     WebDriverWait wait;
 
     @Before
     public void preparation() {
-        minskHomePage =new MinskHomePage(driver);
+        minskHomePage =new com.MinskHomePage(driver);
         driver.get(minskHomePage.BASE_URL);
     }
     @Test
